@@ -1,0 +1,15 @@
+<div class="d-flex  p-3 my-3 text-black bg-secondary rounded shadow-sm">
+  <div class="d-flex align-items-center mr-auto">
+    <i class="{{iconClass}} mr-3 empresa"></i>
+      <div class="lh-100">
+        <h2 class="mb-0">{{titulo}}</h2>
+        <small>{{subtitulo}}</small>
+      </div>
+  </div>
+  <div class="p-3" *ngIf="botao">
+    <button class="btn btn-outline-dark botao" (click)="buscarRota('/cadastrarEmpresa')">
+      <i class="{{iconClass2}} legal" aria-hidden="true"></i>
+      {{message}}
+    </button>
+  </div>
+</div>

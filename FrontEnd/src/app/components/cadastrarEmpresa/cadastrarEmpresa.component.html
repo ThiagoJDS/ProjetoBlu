@@ -1,0 +1,74 @@
+<div class="animate__animated animate__fadeInUp">
+  <app-titulo
+  [titulo]="'Cadastrar Empresa'"
+  [iconClass]="'fa fa-file'" aria-hidden="true"
+  [iconClass2]="'fas fa-arrow-circle-left fa-2x'"
+  [botao]="true"
+  [message]="'Voltar'"
+  [novaRota]="'/empresa'">
+  </app-titulo>
+</div>
+
+<div class="row animate__animated animate__fadeInUp centro">
+  <div class="form-group col-md-6">
+    <div class="card rounded shadow-sm">
+      <form [formGroup]="form">
+        <div class="p-3">
+          <div class="form-row">
+            <div class="form-group col-md-11">
+              <label>Nome</label>
+              <input type="text" class="form-control" [ngClass]="cssValidator(f.nome)"
+              formControlName="nome" placeholder="Insira o nome da empresa">
+              <div *ngIf="f.nome.errors?.required && f.nome.touched" class="invalid-feedback">
+                Nome é obrigatório.
+              </div>
+              <div *ngIf="f.nome.errors?.minlength" class="invalid-feedback">
+                Nome deve ter no mínimo 2 caracteres.
+              </div>
+              <div *ngIf="f.nome.errors?.maxlength" class="invalid-feedback">
+                Nome deve ter no máximo 70 caracteres.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Unidade da Federação</label>
+              <input type="text" class="form-control" [ngClass]="cssValidator(f.unidadeFederacao)" formControlName="unidadeFederacao"
+              placeholder="Insira a Unidade da Federação" >
+              <div *ngIf="f.unidadeFederacao.errors?.required" class="invalid-feedback">
+                Unidade da Federação é obrigatório.
+              </div>
+              <div *ngIf="f.unidadeFederacao.errors?.minlength" class="invalid-feedback">
+                Unidade da Federação deve ter no mínimo 2 caracteres.
+              </div>
+              <div *ngIf="f.unidadeFederacao.errors?.maxlength" class="invalid-feedback">
+                Unidade da Federação deve ter no máximo 50 caracteres.
+              </div>
+            </div>
+            <div class="form-group col-md-5">
+              <label>CNPJ</label>
+              <input type="string" class="form-control" mask="00.000.000/0000-00" [ngClass]="cssValidator(f.cnpj)" formControlName="cnpj"
+              placeholder="00.000.000/0000-00">
+              <div *ngIf="f.cnpj.errors?.required && f.cnpj.touched" class="invalid-feedback">
+                CNPJ é obrigatório.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-footer">
+          <div class="d-flex">
+            <button class="btn btn-secondary mr-auto border" (click)="resetForm()">
+              Cancelar Alteração
+            </button>
+            <button class="btn btn-outline-dark ml-2" [disabled]="!form.valid" (click)="salvarEmpresa()">
+              Cadastrar Empresa
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+
+</div>

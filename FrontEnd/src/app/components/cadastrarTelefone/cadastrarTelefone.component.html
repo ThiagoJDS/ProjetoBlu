@@ -1,0 +1,55 @@
+<div class="animate__animated animate__fadeInUp">
+  <app-titulo
+  [titulo]="'Cadastrar Telefone'"
+  [iconClass]="'fa fa-file'" aria-hidden="true"
+  [iconClass2]="'fas fa-arrow-circle-left fa-2x'"
+  [botao]="true"
+  [message]="'Voltar'"
+  [novaRota]="'/telefone'">
+  </app-titulo>
+</div>
+
+<div class="row animate__animated animate__fadeInUp centro">
+  <div class="form-group col-md-6">
+    <div class="card rounded shadow-sm">
+      <form [formGroup]="form">
+        <div class="p-3">
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label>Número de Telefone</label>
+              <input type="text" class="form-control" mask="(00)0 0000-0000" [ngClass]="cssValidator(f.numeroTelefone)"
+              formControlName="numeroTelefone" placeholder="(00)0 0000-0000">
+              <div *ngIf="f.numeroTelefone.errors?.required && f.numeroTelefone.touched" class="invalid-feedback">
+                Número de telefone é obrigatório.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Nome</label>
+              <input type="text" class="form-control" [ngClass]="cssValidator(f.nome)" formControlName="nome"
+              placeholder="Insira o Nome" >
+              <div *ngIf="f.nome.errors?.required" class="invalid-feedback">
+                Nome é obrigatório.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-footer">
+          <div class="d-flex">
+            <button class="btn btn-secondary mr-auto border" (click)="resetForm()">
+              Cancelar Alteração
+            </button>
+            <button class="btn btn-outline-dark ml-2" [disabled]="!form.valid" (click)="salvarTelefone()">
+              Cadastrar Telefone
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+
+</div>
+

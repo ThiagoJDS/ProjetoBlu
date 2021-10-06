@@ -1,0 +1,68 @@
+<div class="animate__animated animate__fadeInUp">
+  <app-titulo
+  [titulo]="'Empresas'"
+  [iconClass]="'fa fa-building'"
+  [botao]="true"
+  [message]="'Novo'">
+  </app-titulo>
+</div>
+
+<div class="card rounded shadow-sm p-3 animate__animated animate__fadeInUp table-responsive">
+
+  <div class="d-flex">
+    <div class="flex-fill pr-3">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Filtro: </div>
+        </div>
+        <input
+        type="text"
+        class="form-control"
+        placeholder="Filtrar por Nome e CNPJ"
+        [(ngModel)]="filtroLista"
+        >
+      </div>
+    </div>
+    </div>
+
+  <table class="table table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+      <th>Excluir</th>
+      <th>#</th>
+      <th>Unidade da Federação</th>
+      <th>Nome da Empresa</th>
+      <th>Cnpj</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="empresas && empresas.length">
+    <tr *ngFor="let empresa of empresasFiltrados" (click)="detalheEmpresa(empresa.id)">
+      <td>
+        <button type="button" class="btn btn-danger btn-lg" tooltip="Excluir" (click)="openModal($event, template, empresa.id)">
+          <i class="fa fa-eraser"></i>
+        </button>
+      </td>
+      <td>{{empresa.id}}</td>
+      <td>{{empresa.unidadeFederacao}}</td>
+      <td>{{empresa.nome}}</td>
+      <td>{{empresa.cnpj | cnpj}}</td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="!empresas.length">
+    <tr>
+      <td colspan="8" class="text-center">
+        <h4>Nenhuma empresa encontrada!</h4>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+</div>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Tem certeza que quer deletar a Empresa de Código? {{this.empresaId}}</p>
+    <button type="button" class="btn btn-danger" (click)="confirm()">Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()">Não</button>
+  </div>
+</ng-template>

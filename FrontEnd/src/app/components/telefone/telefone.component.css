@@ -1,0 +1,9 @@
+thead, tbody {
+  text-align: center;
+}
+tr {
+  cursor: pointer;
+}
+.card {
+  margin-bottom: 20px;
+}
