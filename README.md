@@ -63,3 +63,12 @@ Com isso feito vamos conseguir executar o comando no terminal: dotnet ef databas
 <p>Acredito que com esse passo a passo já consiga rodar a aplicação sem problemas.</p>
 
 <h2>Algumas Imagens do projeto</h2>
+
+<div>
+  <img width="470" src="ImagensDoProjeto/ProjetoBluImg00.jpg" />
+  <img width="470" src="ImagensDoProjeto/ProjetoBluImg02.jpg" />
+  <img width="470" src="ImagensDoProjeto/ProjetoBluImg03.jpg" />
+  <img width="470" src="ImagensDoProjeto/ProjetoBluImg04.jpg" />
+  <img width="470" src="ImagensDoProjeto/ProjetoBluImg05.jpg" />
+  <img width="470" src="ImagensDoProjeto/ProjetoBluImg06.jpg" />
+</div>
