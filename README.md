@@ -72,3 +72,11 @@ Com isso feito vamos conseguir executar o comando no terminal: dotnet ef databas
   <img width="470" src="ImagensDoProjeto/ProjetoBluImg05.jpg" />
   <img width="470" src="ImagensDoProjeto/ProjetoBluImg06.jpg" />
 </div>
+
+<h2>Autor</h2>
+<div>
+  <p>Thiago Juliano da Silva</p>
+  <p>Contato:</p>
+  <a href = "mailto:thiagojds89@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+  <a href="https://www.linkedin.com/in/thiago-jds/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"   target="_blank"></a>
+</div>
