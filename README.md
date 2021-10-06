@@ -7,7 +7,8 @@
 <p>
   Esse projeto tem o intuito de cadastrar informações de uma empresa, fornecedor, alterar, deletar e filtrar informações.
   Sim, é um pequeno crud, mas para mim o foco desse projeto não é apenas isso, é analisar como desenvolvi todo o BackEnd, 
-  FrontEnd, como organizei todo o projeto.
+  FrontEnd, como organizei todo o projeto. Observação, nomes cadastrados, nomes de empresas, cpfs, cnpjs já cadastrados ao executar o projeto, 
+  são informações ilustrativas, ou seja, informações "inventadas" apenas para ver o funcionamento do projeto.
 </p>
 
 <h2>Ferramentas Utilizadas</h2>
@@ -20,7 +21,7 @@
   <li>Para o FrontEnd utilizei o Angular.</li>
 </ul>  
 
-<h2>Alguns Pré-Requisito</h2>
+<h2>Alguns Pré-Requisitos</h2>
 <ul>
   <li>Instalar VS Code.</li>
   <li>Instalar Sql Server.</li>
@@ -45,4 +46,20 @@
 * Agora que terminou digite no terminal do FrontEnd: ng serve --open
 * Com isso vai compilar o projeto e sucesso.
 
-Uma Pequena observação que para rodar o FrontEnd é necessário que o BackEnd também esteja rodando! ^^
+Uma Pequena observação, para rodar o projeto completo, é necessário que o BackEnd e FrontEnd estejam rodando.
+Outra observação, caso no BackEnd seja necessário criar outra migrations, deletar a pasta que tem para criar uma nova,
+após executar o comando no terminal por exemplo: dotnet ef migrations add CriacaoInicial
+<p>Após esse passo, talvez sejá necessário entrar na pasta migrations, na CriacaoInicial procurar por:</p>
+
+* table.ForeignKey(
+* name: "FK_Fornecedors_Empresas_EmpresaId",
+* column: x => x.EmpresaId,
+* principalTable: "Empresas",
+* principalColumn: "Id",
+* onDelete: ReferentialAction.Restrict);
+
+Na parte onDelete: ReferentialAction.Restrict, vai estar ".Cascade" alterar para ".Restrict" como nesse exemplo.
+Com isso feito vamos conseguir executar o comando no terminal: dotnet ef database update
+<p>Acredito que com esse passo a passo já consiga rodar a aplicação sem problemas.</p>
+
+<h2>Algumas Imagens do projeto</h2>
