@@ -39,10 +39,10 @@
 * Agora digite: dotnet ef database update
 * Após isso, no terminal digite: dotnet watch run
 * Aguarde compilar, vai abrir automaticamente no seu navegador o swagger, apenas minimize.
-* Agora abra mais um terminal e entrar na pasta FrontEnd.
-* Estando na pasta FornEnd no terminal digite: npm install
+* Agora abra mais um terminal e entre na pasta FrontEnd.
+* Estando na pasta FrontEnd no terminal digite: npm install
 * Com isso vai instalar todas as depêndencias necessárias para rodar o projeto.
-* Agora que terminou digite no terminal do FronEnd: ng serve --open
+* Agora que terminou digite no terminal do FrontEnd: ng serve --open
 * Com isso vai compilar o projeto e sucesso.
 
 Uma Pequena observação que para rodar o FrontEnd é necessário que o BackEnd também esteja rodando! ^^
