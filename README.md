@@ -1,7 +1,4 @@
-<div> 
-  <h1>ProjetoBlu</h1>
-  <p>Primeiro passo para um grande sonho.</p>
-</div>
+<h1>ProjetoBlu</h1>
 
 <h2>Sobre o projeto</h2>
 <p>
